@@ -46,3 +46,34 @@ usethis::use_github_action(
 # Switching over to the madlibs/ repo
 
 
+
+######  renv Setup  ###########################################################
+# Switching over to penguins/ repo
+
+
+
+######  Authentication  #######################################################
+# We want to save a "secret" (an API key). We should NOT use keystrokes to save
+# an API key, because we could accidentally share our .Rhistory file (which
+# would have these executed lines).
+# Signed up for a NEWS API key here: https://newsapi.org/
+# Here is my API key that they emailed me: f2d3e6ef284046e3ac73f99e4ae4efcf
+# NOTE: this is a pedagogical example ONLY. In real life, we would NEVER include
+# the actual key in a readable text field.
+usethis::edit_r_environ()
+# This opens the .Renviron file. In this file, I will type the following:
+# NEWS_API_KEY=f2d3e6ef284046e3ac73f99e4ae4efcf
+# Now, restart RStudio.
+
+# After restarting, we will create a data_news/ folder and run this code:
+library(httr2)
+date <- Sys.Date() - 1
+req <- request("https:///newsapi.org/v2/everything") %>%
+  req_url_query(
+    # keyword here:
+    q = '`"data science"`',
+    from = date,
+    pageSize = 10,
+    apiKey = Sys.getenv("NEWS_API_KEY")
+  )
+req_perform(req, path = paste0("data_news/", date, ".json"))
