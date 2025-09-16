@@ -77,3 +77,7 @@ req <- request("https:///newsapi.org/v2/everything") %>%
     apiKey = Sys.getenv("NEWS_API_KEY")
   )
 req_perform(req, path = paste0("data_news/", date, ".json"))
+
+# For the rest of the exercise, move to the scrape_news/ repo
+
+
