@@ -34,3 +34,15 @@ usethis::use_github_action(
 )
 # Make sure you change the file name in the " - name: Render \n run: " part to
 # the .qmd file that you are editing
+
+# Ok, so after much pain and suffering, I am apparently REQUIRED to name the
+# file "index.qmd". While this isn't actually true, none of the TAs were able
+# to help me figure out what options I would have to change because I was using
+# a different file name. Ugh...
+
+
+
+######  Posit Cloud  ##########################################################
+# Switching over to the madlibs/ repo
+
+
