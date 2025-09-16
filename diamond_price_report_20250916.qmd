@@ -1,0 +1,21 @@
+---
+title: "Diamonds in the Sky"
+author: "Gabriel Odom"
+date: "`r format(Sys.time(), '%d %B, %Y %H:%M:%S')`"
+format:
+  html:
+    date-format: "DD MMMM, YYYY HH:mm:ss"
+---
+
+## Example Plot of Diamond Prices
+
+```{r}
+#| fig-cap: "Diamond Prices"
+
+library(ggplot2)
+ggplot(data = diamonds) + 
+  aes(x = carat, y = price, colour = cut) + 
+  scale_x_sqrt() + 
+  geom_point(alpha = 0.1)
+```
+

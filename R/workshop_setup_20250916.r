@@ -10,3 +10,18 @@ pak::pak(c("usethis", "pointblank", "logger", "nanoparquet", "rsconnect", "shiny
 
 usethis::use_git()
 usethis::use_github()
+
+######  cron files  ###########################################################
+# use https://crontab.guru/
+# 1. 1AM on Friday: 0 1 * * 5
+# 2. 1st and 15th of each month (pick a time, so I pciked 14:18): 18 14 1,15 * *
+# 3. every 30 minutes on the weekend: */30 * * * 6-7
+# 4. every hour of the workweek: */60 * * * 1-5
+
+
+
+######  GitHub Actions Config  ################################################
+# link: https://github.com/r-lib/actions/tree/v2-branch/examples
+
+
+
