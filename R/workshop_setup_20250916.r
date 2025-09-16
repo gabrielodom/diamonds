@@ -23,5 +23,14 @@ usethis::use_github()
 ######  GitHub Actions Config  ################################################
 # link: https://github.com/r-lib/actions/tree/v2-branch/examples
 
-
-
+usethis::use_github_action()
+# I'm goign to try to use this one:
+# https://github.com/r-lib/actions/blob/v2-branch/examples/render-rmarkdown.yaml
+# Ok, that's the "hard way". There is a magic invocation to get the actions file
+# we need:
+usethis::use_github_action(
+  url = "https://github.com/posit-conf-2025/r-production/blob/main/1-render-qmd.yaml",
+  save_as = "render.yml"
+)
+# Make sure you change the file name in the " - name: Render \n run: " part to
+# the .qmd file that you are editing
